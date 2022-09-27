@@ -1,0 +1,49 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_SWEEPER_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "Sweeper"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+endif
+
+if SHIELD_SWEEPER_LEFT || SHIELD_SWEEPER_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+if ZMK_DISPLAY
+
+config SPI
+	default y
+
+config LS0XX
+	default y
+
+endif # ZMK_DISPLAY
+
+if LVGL
+
+config LVGL_VDB_SIZE
+	int "Display buffer percentage"
+	default 16
+
+config LVGL_DPI
+	int "Dots per inch"
+	default 150
+
+config LVGL_BITS_PER_PIXEL
+	int "Number of bits per pixel"
+	default 1
+
+choice LVGL_COLOR_DEPTH
+	default LVGL_COLOR_DEPTH_1
+endchoice
+
+endif # LVGL
+
+endif

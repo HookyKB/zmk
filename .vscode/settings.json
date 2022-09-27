@@ -1,7 +1,13 @@
 {
   "files.associations": {
+    "*.lt": "html",
+    ".env": "shellscript",
+    ".env_*": "shellscript",
+    "*.scss": "scss",
+    "*.sass": "scss",
     "*.overlay": "dts",
-    "*.keymap": "dts"
+    "wpm_status.h": "c",
+    "wpm.h": "c"
   },
   "python.formatting.provider": "black",
   "[c]": {

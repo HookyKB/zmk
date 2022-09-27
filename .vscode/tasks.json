@@ -6,7 +6,7 @@
     {
       "label": "Build",
       "type": "shell",
-      "command": "cd app && west build",
+      "command": "cd app && (trap 'kill 0' SIGINT; west build -d build/left & west build -d build/right; wait; mv build/left/zephyr/zmk.uf2 ../left.uf2;  mv build/right/zephyr/zmk.uf2 ../right.uf2); cd ..",
       "group": {
         "kind": "build",
         "isDefault": true
