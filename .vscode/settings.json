@@ -5,9 +5,11 @@
     ".env_*": "shellscript",
     "*.scss": "scss",
     "*.sass": "scss",
+    "*.kicad_mod": "lisp",
     "*.overlay": "dts",
     "wpm_status.h": "c",
-    "wpm.h": "c"
+    "wpm.h": "c",
+    "*.inc": "c"
   },
   "python.formatting.provider": "black",
   "[c]": {
