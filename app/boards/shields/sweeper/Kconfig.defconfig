@@ -24,8 +24,6 @@ config SPI
 config LS0XX
 	default y
 
-endif # ZMK_DISPLAY
-
 if LVGL
 
 config LVGL_VDB_SIZE
@@ -45,5 +43,7 @@ choice LVGL_COLOR_DEPTH
 endchoice
 
 endif # LVGL
+
+endif # ZMK_DISPLAY
 
 endif
