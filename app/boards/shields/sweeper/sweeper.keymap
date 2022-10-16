@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 / {
     macros {
@@ -74,10 +75,16 @@
 
     letters {
       bindings = <
-      &mt ESC Q   &kp W       &kp E      &kp R       &kp T         &kp Y  &kp U      &kp I      &kp O       &mt BACKSPACE P
+
+      &rgb_ug RGB_ON  &rgb_ug RGB_OFF &rgb_ug RGB_EFF &ext_power EP_ON       &kp T         &kp Y  &kp U      &kp I      &kp O       &mt BACKSPACE P
       &kp A       &mt LCTRL S &mt LALT D &mt LCMD F  &kp G         &kp H  &mt LCMD J &mt LALT K &mt LCTRL L &mt QUOT SEMI
       &mt LSHFT Z &kp X       &kp C      &kp V       &kp B         &kp N  &kp M      &kp CMMA   &kp DOT     &mt RSHFT FSLH
                                          &lt 1 ENTER &lt 2 SPACE   &to 1  &to 2
+
+      // &mt ESC Q   &kp W       &kp E      &kp R       &kp T         &kp Y  &kp U      &kp I      &kp O       &mt BACKSPACE P
+      // &kp A       &mt LCTRL S &mt LALT D &mt LCMD F  &kp G         &kp H  &mt LCMD J &mt LALT K &mt LCTRL L &mt QUOT SEMI
+      // &mt LSHFT Z &kp X       &kp C      &kp V       &kp B         &kp N  &kp M      &kp CMMA   &kp DOT     &mt RSHFT FSLH
+      //                                    &lt 1 ENTER &lt 2 SPACE   &to 1  &to 2
       >;
     };
 

@@ -9,7 +9,8 @@
     "*.overlay": "dts",
     "wpm_status.h": "c",
     "wpm.h": "c",
-    "*.inc": "c"
+    "*.inc": "c",
+    "ext_power.h": "c"
   },
   "python.formatting.provider": "black",
   "[c]": {
