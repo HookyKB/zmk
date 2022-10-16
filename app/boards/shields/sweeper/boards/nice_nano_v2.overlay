@@ -6,7 +6,7 @@
 	sck-pin = <20>;
 	mosi-pin = <17>;
 	miso-pin = <25>; // not used
-	cs-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>;
+	cs-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
 
 	nice_view: ls0xx@0 {
 		compatible = "sharp,ls0xx";
@@ -24,8 +24,8 @@
 	status = "okay";
 	mosi-pin = <6>;
 	// Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
-	sck-pin = <26>;
-	miso-pin = <27>;
+	sck-pin = <5>;
+	miso-pin = <7>;
 
 	led_strip: ws2812@0 {
 		compatible = "worldsemi,ws2812-spi";
@@ -36,7 +36,7 @@
 		spi-max-frequency = <4000000>;
 
 		/* WS2812 */
-		chain-length = <1>; /* There are per-key RGB, but the first 6 are underglow */
+		chain-length = <2>; /* There are per-key RGB, but the first 6 are underglow */
 		spi-one-frame = <0x70>;
 		spi-zero-frame = <0x40>;
 
@@ -46,7 +46,7 @@
 
 / {
   chosen {
-    zephyr,display = &nice_view;
+//     zephyr,display = &nice_view;
     zmk,underglow = &led_strip;
   };
 };
