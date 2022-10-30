@@ -1,52 +1,36 @@
 #include <dt-bindings/led/led.h>
 
-&spi0 {
+
+nice_view_spi: &spi0 {
 	compatible = "nordic,nrf-spim";
-	status = "okay";
 	sck-pin = <20>;
 	mosi-pin = <17>;
 	miso-pin = <25>; // not used
 	cs-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
-
-	nice_view: ls0xx@0 {
-		compatible = "sharp,ls0xx";
-		label = "DISPLAY";
-		spi-max-frequency = <1000000>;
-		reg = <0>;
-		width = <160>;
-		height = <68>;
-	};
 };
 
-&spi1 {
-	compatible = "nordic,nrf-spim";
-	/* Cannot be used together with i2c0. */
-	status = "okay";
-	mosi-pin = <6>;
-	// Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
-	sck-pin = <5>;
-	miso-pin = <7>;
+// &spi1 {
+// 	compatible = "nordic,nrf-spim";
+// 	/* Cannot be used together with i2c0. */
+// 	status = "okay";
+// 	mosi-pin = <8>;
+// 	// Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
+// 	sck-pin = <5>;
+// 	miso-pin = <7>;
 
-	led_strip: ws2812@0 {
-		compatible = "worldsemi,ws2812-spi";
-		label = "SK6812mini";
+// 	led_strip: ws2812@0 {
+// 		compatible = "worldsemi,ws2812-spi";
+// 		label = "SK6812mini";
 
-		/* SPI */
-		reg = <0>; /* ignored, but necessary for SPI bindings */
-		spi-max-frequency = <4000000>;
+// 		/* SPI */
+// 		reg = <0>; /* ignored, but necessary for SPI bindings */
+// 		spi-max-frequency = <4000000>;
 
-		/* WS2812 */
-		chain-length = <2>; /* There are per-key RGB, but the first 6 are underglow */
-		spi-one-frame = <0x70>;
-		spi-zero-frame = <0x40>;
+// 		/* WS2812 */
+// 		chain-length = <2>; /* There are per-key RGB, but the first 6 are underglow */
+// 		spi-one-frame = <0x70>;
+// 		spi-zero-frame = <0x40>;
 
-		color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
-	};
-};
-
-/ {
-  chosen {
-//     zephyr,display = &nice_view;
-    zmk,underglow = &led_strip;
-  };
-};
+// 		color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+// 	};
+// };

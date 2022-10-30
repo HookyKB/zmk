@@ -3,12 +3,14 @@ id: sweeper
 name: Sweeper
 type: shield
 url: https://github.com/davidphilipbarr/Sweep
-requires: [pro_micro]
+requires:
+  - pro_micro
+  - nice_view
 exposes: []
 features:
   - keys
   - underglow
-  # - display
+  - display
 siblings:
   - sweeper_left
   - sweeper_right

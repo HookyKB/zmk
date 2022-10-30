@@ -6,3 +6,4 @@ config SHIELD_SWEEPER_LEFT
 
 config SHIELD_SWEEPER_RIGHT
 	def_bool $(shields_list_contains,sweeper_right)
+
