@@ -3,8 +3,8 @@
 
 nice_view_spi: &spi0 {
 	compatible = "nordic,nrf-spim";
-	sck-pin = <20>;
-	mosi-pin = <17>;
+	sck-pin = <17>;
+	mosi-pin = <20>;
 	miso-pin = <25>; // not used
 	cs-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
 };

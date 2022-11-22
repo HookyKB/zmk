@@ -1,6 +1,6 @@
 file_format: "1"
-id: sweeper
-name: Sweeper
+id: wombat
+name: Wombat
 type: shield
 url: https://github.com/davidphilipbarr/Sweep
 requires:
@@ -12,5 +12,5 @@ features:
   - underglow
   - display
 siblings:
-  - sweeper_left
-  - sweeper_right
+  - wombat_left
+  - wombat_right
