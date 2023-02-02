@@ -6,10 +6,26 @@
     {
       "label": "Build",
       "type": "shell",
-      "command": "cd app && (trap 'kill 0' SIGINT; west build -d build/left & west build -d build/right; wait; mv build/left/zephyr/zmk.uf2 ../left.uf2;  mv build/right/zephyr/zmk.uf2 ../right.uf2); cd ..",
+      "command": "cd app && (trap 'kill 0' SIGINT; west build -d build/left -b nice_nano_v2 -- -DSHIELD=\"wombat_left nice_view\" & west build -d build/right -b nice_nano_v2 -- -DSHIELD=\"wombat_right nice_view\"; wait; mv build/left/zephyr/zmk.uf2 ../left.uf2;  mv build/right/zephyr/zmk.uf2 ../right.uf2); cd ..",
       "group": {
         "kind": "build",
         "isDefault": true
+      }
+    },
+    {
+      "label": "Build left",
+      "type": "shell",
+      "command": "cd app && west build -d build/left -b nice_nano_v2 -p -- -DSHIELD=\"wombat_left nice_view\"; mv build/left/zephyr/zmk.uf2 ../left.uf2; cd ..",
+      "group": {
+        "kind": "build",
+      }
+    },
+    {
+      "label": "Build right",
+      "type": "shell",
+      "command": "cd app && west build -d build/right -b nice_nano_v2 -p -- -DSHIELD=\"wombat_right nice_view\"; mv build/right/zephyr/zmk.uf2 ../right.uf2; cd ..",
+      "group": {
+        "kind": "build",
       }
     },
     {
