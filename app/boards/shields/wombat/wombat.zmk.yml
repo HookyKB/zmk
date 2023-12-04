@@ -5,12 +5,11 @@ type: shield
 url: https://github.com/davidphilipbarr/Sweep
 requires:
   - pro_micro
-  - nice_view
+  # - nice_view
 exposes: []
 features:
   - keys
-  - underglow
-  - display
+  # - display
 siblings:
   - wombat_left
   - wombat_right

@@ -60,9 +60,9 @@
     letters {
       label = " Az";
       bindings = <
-      &mt GRAVE Q  &kp W       &kp E      &kp R       &kp T       &kp Y     &kp U      &kp I      &kp O       &mt MINUS P
-      &mt LSHIFT A &mt LCTRL S &mt LALT D &mt LCMD F  &kp G       &kp H     &mt LCMD J &mt LALT K &mt LCTRL L &mt RSHFT SEMI
-      &kp Z        &kp X       &kp C      &kp V       &kp B       &kp N     &kp M      &kp CMMA   &kp DOT     &mt QUOT FSLH
+      &mt GRAVE Q  &kp W       &kp F      &kp P       &kp G       &kp J     &kp L      &kp U      &kp Y       &mt MINUS SEMI
+      &mt LSHIFT A &mt LCTRL R &mt LALT S &mt LCMD T  &kp D       &kp H     &mt LCMD N &mt LALT E &mt LCTRL I &mt RSHFT O
+      &kp Z        &kp X       &kp C      &kp V       &kp B       &kp K     &kp M      &kp CMMA   &kp DOT     &mt QUOT FSLH
                                           &lt 1 BSPC  &lt 2 RET   &lt 2 TAB &lt 1 SPACE
       >;
     };
