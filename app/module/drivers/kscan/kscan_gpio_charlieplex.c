@@ -232,6 +232,7 @@ static void kscan_charlieplex_read_end(const struct device *dev) {
     const struct kscan_charlieplex_config *config = dev->config;
 
     if (config->use_interrupt) {
+        LOG_DBG('switching to interrupt')
         // Return to waiting for an interrupt.
         kscan_charlieplex_interrupt_enable(dev);
     } else {
